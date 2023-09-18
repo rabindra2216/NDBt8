@@ -25,8 +25,7 @@ app.get('/mobiles/:name',function(req,res){
        //res.send(students[2]);
         res.send(mobile);
     }
-     else{ res.status(404).send('No Mobile Found!')
-}
+     //else{ res.status(404).send('No Mobile Found!')}
 })
 app.get('/mobiles',function(req,res){
     let brandStr=req.query.brand;
