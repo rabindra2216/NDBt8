@@ -59,7 +59,7 @@ app.post("/mobiles", function (req, res) {
     // let maxid = students.reduce((acc, curr)=>curr.id >= acc ? curr.id : acc,0);
     // let newid = maxid + 1;
     let newMobile= {...body };
-    mobiles.push(newMobile);
+    mobiles.push(newMobile);  
     res.send(newMobile);
     });
     app.put("/mobiles/:name", function (req, res) {
@@ -71,7 +71,7 @@ app.post("/mobiles", function (req, res) {
         mobiles[index] = updatedMobiles;
         res.send(updatedMobiles);
         }
-        else res.status(404).send('No MobileS found!');
+        else res.status(404).send('No Mobile found!');
         });
     app.delete("/mobiles/:name", function (req, res) {
             let name = req.params.name; 
@@ -82,60 +82,3 @@ app.post("/mobiles", function (req, res) {
             }
             else res.status(404).send('No Mobile found!');
     });
-
-
-    
-// const { Client } = require("pg");
-// const client = new Client({
-//    user: "postgres",
-//     password: "Rdatabase@2216",
-//     database:"postgres",
-//    port: 5432,
-//    host: "db.nvpowactnetkahazvbds.supabase.co", 
-//    ssl: { rejectUnauthorized: false },
-//    }); 
-//    client.connect(function (res, error)
-//     { console.log("Connected!!!");
-   
-//    });
-   
-//    app.get("/users", function (req, res, next) 
-//    { console.log("Inside /users get api");
-//    const query = `SELECT * FROM users`;
-// client.query(query, function (err, result)
-// { if (err) 
-// { res.status(400).send(err);}
-// res.send(result.rows);
-// client.end();
-// });
-// });
-
-// app.post("/users", function (req, res, next)
-// { console.log("Inside post of user"); 
-// var values = Object.values (req.body);
-// console.log(values);
-// const query =`INSERT INTO users (email, firstname, lastname, age) VALUES ($1,$2,$3,$4)`;
-// client.query(query, values, function (err, result) {
-//    if (err) {
-//    res.status(400).send(err);
-//    }
-//    //console.log(result);
-//    res.send(`${result.rowCount} insertion successful`);
-//    });
-   
-//    });
-
-//    //put
-// app.put("/users/:id", function (req, res, next) 
-// { console.log("Inside put of use r^ prime prime ") ;
-// let userId = req.params.id;
-// let age = req.body.age;
-// let values= [age,userId]
-// const query =`UPDATE users SET age =$1 WHERE id= $2`;
-// client.query(query, values, function (err, result)
-// { if (err) {res.status(400).send(err);}
-
-// res.send(`${result.rowCount} updation successful`);
-// });
-// });
-//    // CREATE TABLE users (id SERIAL PRIMARY KEY,email varchar, firstName varchar,lastName varchar,age int)
